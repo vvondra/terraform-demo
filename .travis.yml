@@ -1,0 +1,19 @@
+language: ruby
+dist: trusty
+rvm:
+  - 2.5.0
+
+addons:
+  apt:
+    packages:
+      - unzip
+
+before_install:
+  - gem update --system
+  - gem update bundler
+  - wget https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_linux_amd64.zip
+  - unzip terraform*.zip
+
+script:
+  - export TERRAFORM_BINARY=$PWD/terraform
+  - ./terraform_tool validate

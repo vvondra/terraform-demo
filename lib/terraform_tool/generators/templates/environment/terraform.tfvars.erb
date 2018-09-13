@@ -1,0 +1,65 @@
+# Contextt <%= @context %>
+
+# must not contain underscores
+environment = "<%= @environment.gsub('_', '-') %>"
+
+newrelic_key = "6d18a0e413d80100a86152f3f8813478cb30ebeb"
+
+# The AWS region of your VPC
+# Example :
+#   region = "eu-west-1"
+region = ""
+
+# Your VPC's CIDR range
+# Example:
+#   vpc_cidr = "10.80.0.0/16"
+vpc_cidr = ""
+
+
+# CIDR ranges of your public networks
+# Example:
+#   public_cidrs = [
+#    "10.80.0.0/24",
+#    "10.80.1.0/24",
+#    "10.80.2.0/24",
+#  ]
+
+public_cidrs = [
+]
+
+# CIDR ranges of your private networks
+# Example:
+#   private_cidrs = [
+#    "10.80.128.0/24",
+#    "10.80.129.0/24",
+#    "10.80.130.0/24",
+#  ]
+private_cidrs = [
+]
+
+# The IAM role of your Kubernetes Nodes
+# Example:
+#   k8s_node_role = "logistics-kubernetes-cluster-IAMRoleWorker-YAGBNASOOCRR"
+k8s_node_role = ""
+
+# Map containing information for the peering connection to the VPN VPC
+# Example:
+#  vpn_vpc = {
+#    id                    = "vpc-47970523"
+#    cidr_block            = "10.40.0.0/16"
+#    vpn_security_group_id = "sg-8f0cede9"
+#
+#    vpn_subnet_route_table_id = "rtb-daa0febe"
+#  }
+vpn_vpc = {
+  id                        = ""
+  cidr_block                = ""
+  vpn_security_group_id     = ""
+  vpn_subnet_route_table_id = ""
+}
+
+# Determines whether CloudWatch monitoring for SQS is enabled or not
+cloud_watch_queue_monitoring_enabled = false
+
+# ARN of the CloudWatch alert topic
+cloud_watch_alert_topic_arn = ""

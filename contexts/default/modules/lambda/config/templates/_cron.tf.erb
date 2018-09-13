@@ -1,0 +1,27 @@
+resource "aws_cloudwatch_event_rule" "restaurant_ingestion_cron_<%= @data['country_code'] %>" {
+  name = "${var.context}-${var.environment}-restaurant-ingestion-cron-<%= @data['country_code'] %>"
+  schedule_expression = "<%= @cron['schedule'] %>"
+  role_arn = "${aws_iam_role.lambda.arn}"
+
+  <% if @cron.key?('enabled') %>
+  is_enabled = <%= @cron['enabled'] %>
+  <% end %>
+
+  depends_on = [
+    "aws_iam_role.lambda"
+  ]
+}
+
+resource "aws_cloudwatch_event_target" "restaurant_ingestion_cron_<%= @data['country_code'] %>" {
+  target_id = "${var.context}-${var.environment}-restaurant-ingestion-cron-<%= @data['country_code'] %>"
+  rule = "${aws_cloudwatch_event_rule.restaurant_ingestion_cron_<%= @data['country_code'] %>.name}"
+  arn = "${module.<%= @context %>-restaurant-ingestion-lambda-<%= @data['country_code'] %>.lambda_function_arn}"
+}
+
+resource "aws_lambda_permission" "restaurant_ingestion_cron_<%= @data['country_code'] %>" {
+  statement_id = "AllowExecutionFromCloudWatch"
+  action = "lambda:InvokeFunction"
+  function_name = "${module.<%= @context %>-restaurant-ingestion-lambda-<%= @data['country_code'] %>.lambda_function_name}"
+  principal = "events.amazonaws.com"
+  source_arn = "${aws_cloudwatch_event_rule.restaurant_ingestion_cron_<%= @data['country_code'] %>.arn}"
+}

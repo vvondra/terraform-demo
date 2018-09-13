@@ -1,0 +1,8 @@
+terraform {
+  backend "s3" {
+    bucket = "logistics-infra-terraform-state"
+    key    = "logistics-infra-terraform-state.tfstate"
+    region = "eu-west-1"
+    profile = "logistics-production"
+  }
+}

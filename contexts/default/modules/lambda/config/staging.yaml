@@ -1,0 +1,102 @@
+template_data:
+  lambda:
+    lambda_version: "0.0.3"
+    restaurant_api_token: "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJSdW9mbWFqRXNEUG9qejBZSHplTURtSFI0S2pSQzJadCIsInN1YiI6MzMwOTAsImV4cCI6NjAwNTI4ODcwMDAwLCJyb2wiOiJjdXN0b21lciIsInJvbGVzIjpbInBvcnlnb24uYWNjb3VudF9tYW5hZ2VyIiwicGxhdGZvcm0ucGFuZG9yYSJdLCJuYW0iOiJBZGl0eWEgU2V0aCIsImVtYSI6InJlc3RhdXJhbnQtaW5nZXN0b3JAZGVsaXZlcnloZXJvLmNvbSIsImNvdW50cmllcyI6WyJ0aCIsInBrIiwicGgiLCJjYSIsIm5vIiwiYXQiLCJteSIsImhrIiwidHciLCJybyIsImJkIiwiYmciLCJzZyIsInNlIiwiZmkiLCJkZSJdfQ.CzdWmvYciqsWZuVjzSja0TSzDhlrRba4jE8e1c25kLA"
+
+    functions:
+      - country_code: "at"
+        restaurant_api_url: "https://at-st.usehurrier.com/api/deliveryareas/v1/ingestor/ingest_restaurants"
+        partials:
+          cron:
+            schedule: "cron(00 6 * * ? *)"
+            enabled: true
+      - country_code: "bd"
+        restaurant_api_url: "https://bd-st.usehurrier.com/api/deliveryareas/v1/ingestor/ingest_restaurants"
+        partials:
+          cron:
+            schedule: "cron(05 6 * * ? *)"
+            enabled: true
+      - country_code: "bg"
+        restaurant_api_url: "https://bg-st.usehurrier.com/api/deliveryareas/v1/ingestor/ingest_restaurants"
+        partials:
+          cron:
+            schedule: "cron(10 6 * * ? *)"
+            enabled: true
+      - country_code: "ca"
+        restaurant_api_url: "https://ca-st.usehurrier.com/api/deliveryareas/v1/ingestor/ingest_restaurants"
+        partials:
+          cron:
+            schedule: "cron(15 6 * * ? *)"
+            enabled: true
+      - country_code: "de"
+        restaurant_api_url: "https://de-st.usehurrier.com/api/deliveryareas/v1/ingestor/ingest_restaurants"
+        partials:
+          cron:
+            schedule: "cron(20 6 * * ? *)"
+            enabled: true
+      - country_code: "fi"
+        restaurant_api_url: "https://fi-st.usehurrier.com/api/deliveryareas/v1/ingestor/ingest_restaurants"
+        partials:
+          cron:
+            schedule: "cron(25 6 * * ? *)"
+            enabled: true
+      - country_code: "hk"
+        restaurant_api_url: "https://hk-st.usehurrier.com/api/deliveryareas/v1/ingestor/ingest_restaurants"
+        partials:
+          cron:
+            schedule: "cron(30 6 * * ? *)"
+            enabled: true
+      - country_code: "my"
+        restaurant_api_url: "https://my-st.usehurrier.com/api/deliveryareas/v1/ingestor/ingest_restaurants"
+        partials:
+          cron:
+            schedule: "cron(35 6 * * ? *)"
+            enabled: true
+      - country_code: "no"
+        restaurant_api_url: "https://no-st.usehurrier.com/api/deliveryareas/v1/ingestor/ingest_restaurants"
+        partials:
+          cron:
+            schedule: "cron(40 6 * * ? *)"
+            enabled: true
+      - country_code: "ph"
+        restaurant_api_url: "https://ph-st.usehurrier.com/api/deliveryareas/v1/ingestor/ingest_restaurants"
+        partials:
+          cron:
+            schedule: "cron(45 6 * * ? *)"
+            enabled: true
+      - country_code: "pk"
+        restaurant_api_url: "https://pk-st.usehurrier.com/api/deliveryareas/v1/ingestor/ingest_restaurants"
+        partials:
+          cron:
+            schedule: "cron(50 6 * * ? *)"
+            enabled: true
+      - country_code: "ro"
+        restaurant_api_url: "https://ro-st.usehurrier.com/api/deliveryareas/v1/ingestor/ingest_restaurants"
+        partials:
+          cron:
+            schedule: "cron(55 6 * * ? *)"
+            enabled: true
+      - country_code: "se"
+        restaurant_api_url: "https://se-st.usehurrier.com/api/deliveryareas/v1/ingestor/ingest_restaurants"
+        partials:
+          cron:
+            schedule: "cron(00 7 * * ? *)"
+            enabled: true
+      - country_code: "sg"
+        restaurant_api_url: "https://sg-st.usehurrier.com/api/deliveryareas/v1/ingestor/ingest_restaurants"
+        partials:
+          cron:
+            schedule: "cron(05 7 * * ? *)"
+            enabled: true
+      - country_code: "th"
+        restaurant_api_url: "https://th-st.usehurrier.com/api/deliveryareas/v1/ingestor/ingest_restaurants"
+        partials:
+          cron:
+            schedule: "cron(10 7 * * ? *)"
+            enabled: true
+      - country_code: "tw"
+        restaurant_api_url: "https://tw-st.usehurrier.com/api/deliveryareas/v1/ingestor/ingest_restaurants"
+        partials:
+          cron:
+            schedule: "cron(15 7 * * ? *)"
+            enabled: true

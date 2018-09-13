@@ -1,0 +1,18 @@
+<% @functions.each do |lambda_function| %>
+module "<%= @context %>-restaurant-ingestion-lambda-<%= lambda_function['country_code'] %>" {
+  source = "./modules/lambda"
+
+  context = "${var.context}"
+  country_code = "<%= lambda_function['country_code'] %>"
+  environment = "${var.environment}"
+  lambda_iam_role_arn = "${aws_iam_role.lambda.arn}"
+  releases_bucket_id = "${aws_s3_bucket.releases.id}"
+  restaurant_api_token = "<%= @restaurant_api_token %>"
+  restaurant_api_url = "<%= lambda_function["restaurant_api_url"] %>"
+  lambda_version = "<%= @lambda_version %>"
+}
+
+<%= render_partial(name: :cron, data: lambda_function, force_rendering: false) %>
+
+<% end %>
+

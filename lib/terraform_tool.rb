@@ -1,0 +1,7 @@
+require 'erubis'
+require 'pry'
+require 'thor'
+require 'core_ext/hash'
+require 'terraform_tool/validators/base_validator'
+require 'terraform_tool/helpers'
+require 'terraform_tool/app'
